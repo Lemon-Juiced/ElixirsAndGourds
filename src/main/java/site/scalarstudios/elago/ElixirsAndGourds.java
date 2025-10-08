@@ -7,6 +7,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import site.scalarstudios.elago.block.ElagoBlocks;
 import site.scalarstudios.elago.creativetab.ElagoCreativeTabs;
 import site.scalarstudios.elago.item.ElagoItems;
 
@@ -19,6 +20,7 @@ public class ElixirsAndGourds {
 
         // Register Items
         ElagoItems.register(modEventBus);
+        ElagoBlocks.register(modEventBus);
 
         // Register Creative Tabs
         ElagoCreativeTabs.register(modEventBus);

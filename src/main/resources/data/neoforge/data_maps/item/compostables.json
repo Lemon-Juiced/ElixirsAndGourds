@@ -1,0 +1,10 @@
+{
+  "values": {
+    "elago:gourd": {
+      "chance": 0.65
+    },
+    "elago:wild_gourd": {
+      "chance": 0.65
+    }
+  }
+}

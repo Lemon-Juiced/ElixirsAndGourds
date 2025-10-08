@@ -9,6 +9,7 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import site.scalarstudios.elago.ElixirsAndGourds;
+import site.scalarstudios.elago.block.ElagoBlocks;
 import site.scalarstudios.elago.item.ElagoItems;
 
 public class ElagoCreativeTabs {
@@ -23,6 +24,7 @@ public class ElagoCreativeTabs {
         if (event.getTab() == ELAGO_TAB.get()) {
             event.accept(ElagoItems.GOURD.get());
             event.accept(ElagoItems.BOTTLE_GOURD.get());
+            event.accept(ElagoBlocks.WILD_GOURD.get());
         }
     }
 

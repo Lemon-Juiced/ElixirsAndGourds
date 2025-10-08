@@ -1,6 +1,8 @@
 {
   "itemGroup.elago": "Elixirs And Gourds",
 
+  "block.elago.wild_gourd": "Wild Gourd",
+
   "item.elago.gourd": "Gourd",
   "item.elago.bottle_gourd": "Bottle Gourd"
 }
