@@ -3,6 +3,7 @@ package site.scalarstudios.elago.block;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CarrotBlock;
 import net.minecraft.world.level.block.PumpkinBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -25,6 +26,8 @@ public class ElagoBlocks {
             .instrument(NoteBlockInstrument.DIDGERIDOO)
             .strength(1.0F).sound(SoundType.WOOD)
             .pushReaction(PushReaction.DESTROY)));
+
+    public static final DeferredBlock<GourdBlock> GOURDS = registerBlock("gourds", () -> new GourdBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
