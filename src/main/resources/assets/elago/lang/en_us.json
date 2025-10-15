@@ -5,5 +5,9 @@
   "block.elago.gourds": "Gourds",
 
   "item.elago.gourd": "Gourd",
-  "item.elago.bottle_gourd": "Bottle Gourd"
+  "item.elago.bottle_gourd": "Bottle Gourd",
+
+  "item.elago.gourd_of_healing": "Gourd of Healing",
+
+  "tooltip.elago_potion.uses_remaining": "%s/%s uses remaining"
 }

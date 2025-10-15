@@ -24,6 +24,9 @@ public class ElagoCreativeTabs {
         if (event.getTab() == ELAGO_TAB.get()) {
             event.accept(ElagoItems.GOURD.get());
             event.accept(ElagoItems.BOTTLE_GOURD.get());
+
+            event.accept(ElagoItems.GOURD_OF_HEALING.get());
+
             event.accept(ElagoBlocks.WILD_GOURD.get());
         }
     }

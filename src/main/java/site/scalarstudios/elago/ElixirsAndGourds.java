@@ -9,6 +9,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import site.scalarstudios.elago.block.ElagoBlocks;
 import site.scalarstudios.elago.creativetab.ElagoCreativeTabs;
+import site.scalarstudios.elago.datacomponent.ElagoDataComponents;
 import site.scalarstudios.elago.item.ElagoItems;
 
 @Mod(ElixirsAndGourds.MODID)
@@ -21,6 +22,9 @@ public class ElixirsAndGourds {
         // Register Items
         ElagoItems.register(modEventBus);
         ElagoBlocks.register(modEventBus);
+
+        // Register Data Components
+        ElagoDataComponents.register(modEventBus);
 
         // Register Creative Tabs
         ElagoCreativeTabs.register(modEventBus);
