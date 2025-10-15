@@ -3,29 +3,29 @@ package site.scalarstudios.elago.item;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.PotionItem;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Item;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import net.minecraft.advancements.CriteriaTriggers;
+import site.scalarstudios.elago.datacomponent.ElagoDataComponents;
+import java.util.List;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.core.registries.BuiltInRegistries;
 
-import site.scalarstudios.elago.datacomponent.ElagoDataComponents;
-
-import java.util.List;
-
-/**
- * A custom potion item that can be used multiple times before being consumed.
- * Each use applies a specified effect to the user.
- * This can't be right and is probably very wrong. FML
- *
- * @author Lemon_Juiced
- */
-public class ElagoPotionItem extends PotionItem {
+public class ElagoPotionItem extends Item {
     private static final int MAX_USES = 3;
+    private static final int DRINK_DURATION = 32;
     private final Holder<MobEffect> customEffect;
     private final int customDurationTicks;
     private final int customAmplifier;
@@ -39,19 +39,52 @@ public class ElagoPotionItem extends PotionItem {
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entityLiving) {
-        ItemStack result = super.finishUsingItem(stack, level, entityLiving);
-        // Apply custom effect
+        if (entityLiving instanceof Player player) {
+            if (player instanceof ServerPlayer serverPlayer) {
+                CriteriaTriggers.CONSUME_ITEM.trigger(serverPlayer, stack);
+            }
+            player.awardStat(Stats.ITEM_USED.get(this));
+        }
         if (!level.isClientSide && customEffect != null) {
             entityLiving.addEffect(new MobEffectInstance(customEffect, customDurationTicks, customAmplifier));
         }
-        int uses = result.get(ElagoDataComponents.ELAGO_POTION_USES.get()) != null ? result.get(ElagoDataComponents.ELAGO_POTION_USES.get()) : MAX_USES;
+        int uses = stack.get(ElagoDataComponents.ELAGO_POTION_USES.get()) != null ? stack.get(ElagoDataComponents.ELAGO_POTION_USES.get()) : MAX_USES;
         uses--;
         if (uses > 0) {
-            result.set(ElagoDataComponents.ELAGO_POTION_USES.get(), uses);
-            return result;
+            stack.set(ElagoDataComponents.ELAGO_POTION_USES.get(), uses);
+            return stack;
         } else {
             return new ItemStack(ElagoItems.BOTTLE_GOURD.get());
         }
+    }
+
+    @Override
+    public int getUseDuration(ItemStack stack, LivingEntity entity) {
+        return 40;
+    }
+
+    @Override
+    public UseAnim getUseAnimation(ItemStack stack) {
+        return UseAnim.DRINK;
+    }
+
+    public SoundEvent getDrinkingSound() {
+        return SoundEvents.GENERIC_DRINK;
+    }
+
+    public SoundEvent getEatingSound() {
+        return SoundEvents.GENERIC_DRINK;
+    }
+
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        player.startUsingItem(hand);
+        return InteractionResultHolder.consume(player.getItemInHand(hand));
+    }
+
+    @Override
+    public boolean isFoil(ItemStack stack) {
+        return true;
     }
 
     @Override
