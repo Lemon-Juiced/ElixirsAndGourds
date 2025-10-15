@@ -25,15 +25,14 @@ import net.minecraft.core.registries.BuiltInRegistries;
 
 public class ElagoPotionItem extends Item {
     private static final int MAX_USES = 3;
-    private static final int DRINK_DURATION = 32;
     private final Holder<MobEffect> customEffect;
     private final int customDurationTicks;
     private final int customAmplifier;
 
-    public ElagoPotionItem(Item.Properties properties, MobEffect effect, int durationSeconds, int amplifier) {
+    public ElagoPotionItem(Item.Properties properties, MobEffect effect, double durationSeconds, int amplifier) {
         super(properties);
         this.customEffect = BuiltInRegistries.MOB_EFFECT.wrapAsHolder(effect);
-        this.customDurationTicks = durationSeconds * 20;
+        this.customDurationTicks = (int)Math.round(durationSeconds * 20.0);
         this.customAmplifier = amplifier;
     }
 
@@ -60,7 +59,7 @@ public class ElagoPotionItem extends Item {
 
     @Override
     public int getUseDuration(ItemStack stack, LivingEntity entity) {
-        return 40;
+        return 32;
     }
 
     @Override
