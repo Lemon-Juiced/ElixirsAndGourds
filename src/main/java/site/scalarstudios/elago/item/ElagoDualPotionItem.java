@@ -8,6 +8,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.core.registries.BuiltInRegistries;
+import site.scalarstudios.elago.item.potionutil.ElagoPotionRecord;
 
 public class ElagoDualPotionItem extends ElagoPotionItem {
     private final Holder<MobEffect> secondEffect;
@@ -24,6 +25,14 @@ public class ElagoDualPotionItem extends ElagoPotionItem {
     public ElagoDualPotionItem(Item.Properties properties, int maxUses, MobEffect effect1, int durationSeconds1, int amplifier1, MobEffect effect2, int durationSeconds2, int amplifier2) {
         this(properties, maxUses, effect1, (double)durationSeconds1, amplifier1, effect2, (double)durationSeconds2, amplifier2);
     }
+
+    public ElagoDualPotionItem(Item.Properties properties, int maxUses, ElagoPotionRecord record1, ElagoPotionRecord record2) {
+        super(properties, maxUses, record1);
+        this.secondEffect = BuiltInRegistries.MOB_EFFECT.wrapAsHolder(record2.effect());
+        this.secondDurationTicks = (int)Math.round((double)record2.duration() * 20.0);
+        this.secondAmplifier = record2.amplifier();
+    }
+
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entityLiving) {

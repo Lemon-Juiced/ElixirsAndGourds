@@ -1,5 +1,6 @@
 {
-  "itemGroup.elago": "Elixirs And Gourds",
+  "itemGroup.elago.items": "Elixirs And Gourds: Items",
+  "itemGroup.elago.gourds": "Elixirs And Gourds: Gourds",
 
   "block.elago.wild_gourd": "Wild Gourd",
   "block.elago.carved_wild_gourd": "Carved Wild Gourd",
@@ -8,11 +9,21 @@
   "block.elago.gourds": "Gourds",
 
   "item.elago.gourd": "Gourd",
-  "item.elago.bottle_gourd_small": "Bottle Gourd (Small)",
-  "item.elago.bottle_gourd_medium": "Bottle Gourd (Medium)",
-  "item.elago.bottle_gourd_large": "Bottle Gourd (Large)",
+  "item.elago.small_bottle_gourd": "Small Bottle Gourd",
+  "item.elago.medium_bottle_gourd": "Medium Bottle Gourd",
+  "item.elago.large_bottle_gourd": "Large Bottle Gourd",
 
-  "item.elago.gourd_of_healing": "Gourd of Healing",
+  "item.elago.small_gourd_of_healing": "Small Gourd of Healing",
+
+  "item.elago.small_gourd_of_the_turtle_master_1": "Small Gourd of the Turtle Master I",
+  "item.elago.small_gourd_of_the_turtle_master_plus": "Small Gourd of the Turtle Master +",
+  "item.elago.small_gourd_of_the_turtle_master_2": "Small Gourd of the Turtle Master II",
+  "item.elago.medium_gourd_of_the_turtle_master_1": "Medium Gourd of the Turtle Master I",
+  "item.elago.medium_gourd_of_the_turtle_master_plus": "Medium Gourd of the Turtle Master +",
+  "item.elago.medium_gourd_of_the_turtle_master_2": "Medium Gourd of the Turtle Master II",
+  "item.elago.large_gourd_of_the_turtle_master_1": "Large Gourd of the Turtle Master I",
+  "item.elago.large_gourd_of_the_turtle_master_plus": "Large Gourd of the Turtle Master +",
+  "item.elago.large_gourd_of_the_turtle_master_2": "Large Gourd of the Turtle Master II",
 
   "tooltip.elago_potion.uses_remaining": "%s/%s uses remaining"
 }

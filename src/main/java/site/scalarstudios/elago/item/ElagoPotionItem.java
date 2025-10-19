@@ -22,6 +22,7 @@ import java.util.List;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.core.registries.BuiltInRegistries;
+import site.scalarstudios.elago.item.potionutil.ElagoPotionRecord;
 
 public class ElagoPotionItem extends Item {
     private final int maxUses;
@@ -35,6 +36,10 @@ public class ElagoPotionItem extends Item {
         this.customEffect = BuiltInRegistries.MOB_EFFECT.wrapAsHolder(effect);
         this.customDurationTicks = (int)Math.round(durationSeconds * 20.0);
         this.customAmplifier = amplifier;
+    }
+
+    public ElagoPotionItem(Item.Properties properties, int maxUses, ElagoPotionRecord record) {
+        this(properties, maxUses, record.effect(), (double)record.duration(), record.amplifier());
     }
 
     @Override
@@ -54,7 +59,7 @@ public class ElagoPotionItem extends Item {
             stack.set(ElagoDataComponents.ELAGO_POTION_USES.get(), uses);
             return stack;
         } else {
-            return new ItemStack(ElagoItems.BOTTLE_GOURD_SMALL.get());
+            return new ItemStack(ElagoItems.SMALL_BOTTLE_GOURD.get());
         }
     }
 
