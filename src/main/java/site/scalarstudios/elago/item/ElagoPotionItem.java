@@ -24,14 +24,15 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.core.registries.BuiltInRegistries;
 
 public class ElagoPotionItem extends Item {
-    private static final int MAX_USES = 3;
     private final Holder<MobEffect> customEffect;
+    private final int maxUses;
     private final int customDurationTicks;
     private final int customAmplifier;
 
-    public ElagoPotionItem(Item.Properties properties, MobEffect effect, double durationSeconds, int amplifier) {
+    public ElagoPotionItem(Item.Properties properties, MobEffect effect, int maxUses, double durationSeconds, int amplifier) {
         super(properties);
         this.customEffect = BuiltInRegistries.MOB_EFFECT.wrapAsHolder(effect);
+        this.maxUses = maxUses;
         this.customDurationTicks = (int)Math.round(durationSeconds * 20.0);
         this.customAmplifier = amplifier;
     }
@@ -47,7 +48,7 @@ public class ElagoPotionItem extends Item {
         if (!level.isClientSide && customEffect != null) {
             entityLiving.addEffect(new MobEffectInstance(customEffect, customDurationTicks, customAmplifier));
         }
-        int uses = stack.get(ElagoDataComponents.ELAGO_POTION_USES.get()) != null ? stack.get(ElagoDataComponents.ELAGO_POTION_USES.get()) : MAX_USES;
+        int uses = stack.get(ElagoDataComponents.ELAGO_POTION_USES.get()) != null ? stack.get(ElagoDataComponents.ELAGO_POTION_USES.get()) : this.maxUses;
         uses--;
         if (uses > 0) {
             stack.set(ElagoDataComponents.ELAGO_POTION_USES.get(), uses);
@@ -88,7 +89,7 @@ public class ElagoPotionItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        int uses = stack.get(ElagoDataComponents.ELAGO_POTION_USES.get()) != null ? stack.get(ElagoDataComponents.ELAGO_POTION_USES.get()) : MAX_USES;
-        tooltipComponents.add(Component.translatable("tooltip.elago_potion.uses_remaining", uses, MAX_USES).withStyle(ChatFormatting.AQUA));
+        int uses = stack.get(ElagoDataComponents.ELAGO_POTION_USES.get()) != null ? stack.get(ElagoDataComponents.ELAGO_POTION_USES.get()) : this.maxUses;
+        tooltipComponents.add(Component.translatable("tooltip.elago_potion.uses_remaining", uses, this.maxUses).withStyle(ChatFormatting.AQUA));
     }
 }

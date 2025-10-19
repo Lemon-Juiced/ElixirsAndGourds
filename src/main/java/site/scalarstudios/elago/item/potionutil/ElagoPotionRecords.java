@@ -55,7 +55,6 @@ public class ElagoPotionRecords {
     public static final ElagoPotionRecord TURTLE_MASTER_2A = new ElagoPotionRecord(MobEffects.DAMAGE_RESISTANCE.value(), 2, convertMinutesToSeconds(20), "turtle_master_2a");
     public static final ElagoPotionRecord TURTLE_MASTER_2B = new ElagoPotionRecord(MobEffects.MOVEMENT_SLOWDOWN.value(), 2, convertMinutesToSeconds(20), "turtle_master_2b");
 
-
     /**
      * Utility method to convert minutes to seconds.
      *

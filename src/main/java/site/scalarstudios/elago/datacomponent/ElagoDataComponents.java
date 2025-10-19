@@ -12,10 +12,7 @@ import java.util.function.Supplier;
 public class ElagoDataComponents {
     public static final DeferredRegister<DataComponentType<?>> DATA_COMPONENT_TYPES = DeferredRegister.create(Registries.DATA_COMPONENT_TYPE, ElixirsAndGourds.MODID);
 
-    public static final Supplier<DataComponentType<Integer>> ELAGO_POTION_USES = DATA_COMPONENT_TYPES.register(
-            "elago_potion_uses",
-            () -> DataComponentType.<Integer>builder().persistent(Codec.INT).build()
-    );
+    public static final Supplier<DataComponentType<Integer>> ELAGO_POTION_USES = DATA_COMPONENT_TYPES.register("elago_potion_uses", () -> DataComponentType.<Integer>builder().persistent(Codec.INT).build());
 
     public static void register(IEventBus eventBus) {
         DATA_COMPONENT_TYPES.register(eventBus);
