@@ -14,15 +14,15 @@ public class ElagoDualPotionItem extends ElagoPotionItem {
     private final int secondDurationTicks;
     private final int secondAmplifier;
 
-    public ElagoDualPotionItem(Item.Properties properties, MobEffect effect1, double durationSeconds1, int amplifier1, MobEffect effect2, double durationSeconds2, int amplifier2) {
-        super(properties, effect1, durationSeconds1, amplifier1);
+    public ElagoDualPotionItem(Item.Properties properties, MobEffect effect1, int maxUses, double durationSeconds1, int amplifier1, MobEffect effect2, double durationSeconds2, int amplifier2) {
+        super(properties, effect1, maxUses, durationSeconds1, amplifier1);
         this.secondEffect = BuiltInRegistries.MOB_EFFECT.wrapAsHolder(effect2);
         this.secondDurationTicks = (int)Math.round(durationSeconds2 * 20.0);
         this.secondAmplifier = amplifier2;
     }
 
-    public ElagoDualPotionItem(Item.Properties properties, MobEffect effect1, int durationSeconds1, int amplifier1, MobEffect effect2, int durationSeconds2, int amplifier2) {
-        this(properties, effect1, (double)durationSeconds1, amplifier1, effect2, (double)durationSeconds2, amplifier2);
+    public ElagoDualPotionItem(Item.Properties properties, MobEffect effect1, int maxUses, int durationSeconds1, int amplifier1, MobEffect effect2, int durationSeconds2, int amplifier2) {
+        this(properties, effect1, maxUses, (double)durationSeconds1, amplifier1, effect2, (double)durationSeconds2, amplifier2);
     }
 
     @Override
