@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "elago:item/bottle_gourd"
+    "layer0": "elago:item/bottle_gourd_small"
   }
 }

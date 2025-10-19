@@ -2,10 +2,15 @@
   "itemGroup.elago": "Elixirs And Gourds",
 
   "block.elago.wild_gourd": "Wild Gourd",
+  "block.elago.carved_wild_gourd": "Carved Wild Gourd",
+  "block.elago.jack_o_gourd": "Jack o'Gourd",
+
   "block.elago.gourds": "Gourds",
 
   "item.elago.gourd": "Gourd",
-  "item.elago.bottle_gourd": "Bottle Gourd",
+  "item.elago.bottle_gourd_small": "Bottle Gourd (Small)",
+  "item.elago.bottle_gourd_medium": "Bottle Gourd (Medium)",
+  "item.elago.bottle_gourd_large": "Bottle Gourd (Large)",
 
   "item.elago.gourd_of_healing": "Gourd of Healing",
 

@@ -24,15 +24,15 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.core.registries.BuiltInRegistries;
 
 public class ElagoPotionItem extends Item {
-    private final Holder<MobEffect> customEffect;
     private final int maxUses;
+    private final Holder<MobEffect> customEffect;
     private final int customDurationTicks;
     private final int customAmplifier;
 
-    public ElagoPotionItem(Item.Properties properties, MobEffect effect, int maxUses, double durationSeconds, int amplifier) {
+    public ElagoPotionItem(Item.Properties properties, int maxUses, MobEffect effect, double durationSeconds, int amplifier) {
         super(properties);
-        this.customEffect = BuiltInRegistries.MOB_EFFECT.wrapAsHolder(effect);
         this.maxUses = maxUses;
+        this.customEffect = BuiltInRegistries.MOB_EFFECT.wrapAsHolder(effect);
         this.customDurationTicks = (int)Math.round(durationSeconds * 20.0);
         this.customAmplifier = amplifier;
     }
@@ -54,7 +54,7 @@ public class ElagoPotionItem extends Item {
             stack.set(ElagoDataComponents.ELAGO_POTION_USES.get(), uses);
             return stack;
         } else {
-            return new ItemStack(ElagoItems.BOTTLE_GOURD.get());
+            return new ItemStack(ElagoItems.BOTTLE_GOURD_SMALL.get());
         }
     }
 

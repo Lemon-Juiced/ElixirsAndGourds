@@ -23,11 +23,15 @@ public class ElagoCreativeTabs {
     public static void registerTabs(BuildCreativeModeTabContentsEvent event) {
         if (event.getTab() == ELAGO_TAB.get()) {
             event.accept(ElagoItems.GOURD.get());
-            event.accept(ElagoItems.BOTTLE_GOURD.get());
+            event.accept(ElagoItems.BOTTLE_GOURD_SMALL.get());
+            event.accept(ElagoItems.BOTTLE_GOURD_MEDIUM.get());
+            event.accept(ElagoItems.BOTTLE_GOURD_LARGE.get());
 
             event.accept(ElagoItems.GOURD_OF_HEALING.get());
 
             event.accept(ElagoBlocks.WILD_GOURD.get());
+            event.accept(ElagoBlocks.CARVED_WILD_GOURD.get());
+            event.accept(ElagoBlocks.JACK_O_GOURD.get());
         }
     }
 

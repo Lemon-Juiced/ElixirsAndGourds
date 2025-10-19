@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "elago:block/carved_wild_gourd",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "elago:block/carved_wild_gourd"
+    },
+    "facing=south": {
+      "model": "elago:block/carved_wild_gourd",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "elago:block/carved_wild_gourd",
+      "y": 270
+    }
+  }
+}
