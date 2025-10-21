@@ -3,6 +3,7 @@ package site.scalarstudios.elago.creativetab;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
@@ -10,7 +11,9 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import site.scalarstudios.elago.ElixirsAndGourds;
 import site.scalarstudios.elago.block.ElagoBlocks;
+import site.scalarstudios.elago.item.ElagoDualPotionItem;
 import site.scalarstudios.elago.item.ElagoItems;
+import site.scalarstudios.elago.item.ElagoPotionItem;
 
 public class ElagoCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ElixirsAndGourds.MODID);
@@ -36,7 +39,10 @@ public class ElagoCreativeTabs {
             event.accept(ElagoBlocks.CARVED_WILD_GOURD.get());
             event.accept(ElagoBlocks.JACK_O_GOURD.get());
         } else if (event.getTab() == ELAGO_GOURDS_TAB.get()) {
-            // event.accept(ElagoItems.SMALL_GOURD_OF_HEALING.get());
+            for (DeferredHolder<Item, ? extends Item> item : ElagoItems.ITEMS.getEntries()) {
+                if (!(item.get() instanceof ElagoDualPotionItem) && item.get() instanceof ElagoPotionItem) event.accept(item.get());
+            }
+
             event.accept(ElagoItems.SMALL_GOURD_OF_THE_TURTLE_MASTER_1.get());
             event.accept(ElagoItems.SMALL_GOURD_OF_THE_TURTLE_MASTER_PLUS.get());
             event.accept(ElagoItems.SMALL_GOURD_OF_THE_TURTLE_MASTER_2.get());
