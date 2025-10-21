@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "elago:item/medium_bottle_gourd"
+  }
+}
