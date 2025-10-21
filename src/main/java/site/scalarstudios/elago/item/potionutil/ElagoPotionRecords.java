@@ -45,7 +45,7 @@ public class ElagoPotionRecords {
     public static final ElagoPotionRecord INFESTATION = new ElagoPotionRecord(MobEffects.INFESTED.value(),  1, convertMinutesToSeconds(3), "infestation");
     public static final ElagoPotionRecord OOZING = new ElagoPotionRecord(MobEffects.OOZING.value(), 1, convertMinutesToSeconds(3), "oozing");
     public static final ElagoPotionRecord WEAVING = new ElagoPotionRecord(MobEffects.WEAVING.value(), 1, convertMinutesToSeconds(3), "weaving");
-    public static final ElagoPotionRecord WIND_CHARGING = new ElagoPotionRecord(MobEffects.WIND_CHARGED.value(), 1, convertMinutesToSeconds(3), "wind_charged");
+    public static final ElagoPotionRecord WIND_CHARGING = new ElagoPotionRecord(MobEffects.WIND_CHARGED.value(), 1, convertMinutesToSeconds(3), "wind_charging");
 
     // Turtle Master is a special case, as it applies two effects at once. These need to be applied separately.
     public static final ElagoPotionRecord TURTLE_MASTER_1A = new ElagoPotionRecord(MobEffects.DAMAGE_RESISTANCE.value(), 1, convertMinutesToSeconds(20), "turtle_master_1a");
