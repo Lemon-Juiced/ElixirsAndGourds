@@ -1,12 +1,12 @@
-modLoader="javafml" #mandatory
-loaderVersion="${loader_version_range}" #mandatory
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
 license="${mod_license}"
 
 [[mods]]
 modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
-logoFile="examplemod.png"
+logoFile="elago.png"
 credits=""
 authors="${mod_authors}"
 description='''${mod_description}'''
