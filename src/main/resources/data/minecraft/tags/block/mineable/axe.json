@@ -1,6 +1,8 @@
 {
   "values": [
-    "elago:wild_gourd"
+    "elago:wild_gourd",
+    "elago:carved_wild_gourd",
+    "elago:jack_o_gourd"
   ],
   "replace": false
 }
