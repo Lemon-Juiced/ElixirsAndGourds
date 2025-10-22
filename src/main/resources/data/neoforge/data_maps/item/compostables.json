@@ -5,6 +5,9 @@
     },
     "elago:wild_gourd": {
       "chance": 0.65
+    },
+    "elago:carved_wild_gourd": {
+      "chance": 0.65
     }
   }
 }

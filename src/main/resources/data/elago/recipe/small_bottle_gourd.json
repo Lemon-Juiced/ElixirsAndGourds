@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#H#",
+    "BJB",
+    "GGG"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:nether_wart"
+    },
+    "H": {
+      "item": "elago:gourd"
+    },
+    "B": {
+      "item": "minecraft:blaze_powder"
+    },
+    "J": {
+      "item": "minecraft:brewing_stand"
+    },
+    "G": {
+      "item": "minecraft:glass_bottle"
+    }
+  },
+  "result": {
+    "id": "elago:small_bottle_gourd",
+    "count": 1
+  }
+}

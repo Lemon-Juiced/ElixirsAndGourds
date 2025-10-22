@@ -23,8 +23,6 @@ public class ElagoItems {
     public static final Supplier<Item> LARGE_BOTTLE_GOURD = ITEMS.register("large_bottle_gourd", () -> new Item(new Item.Properties()));
 
     // Elago Potions
-    //public static final Supplier<Item> SMALL_GOURD_OF_HEALING = ITEMS.register("small_gourd_of_healing", () -> new ElagoPotionItem(new Item.Properties().stacksTo(1), 4, MobEffects.HEAL.value(),1, 1));
-
     public static final Supplier<Item> SMALL_GOURD_OF_THE_TURTLE_MASTER_1 = ITEMS.register("small_gourd_of_the_turtle_master_1", () -> new ElagoDualPotionItem(new Item.Properties().stacksTo(1), 4, ElagoPotionRecords.TURTLE_MASTER_1A, ElagoPotionRecords.TURTLE_MASTER_1B));
     public static final Supplier<Item> SMALL_GOURD_OF_THE_TURTLE_MASTER_PLUS = ITEMS.register("small_gourd_of_the_turtle_master_plus", () -> new ElagoDualPotionItem(new Item.Properties().stacksTo(1), 4, ElagoPotionRecords.TURTLE_MASTER_PLUSA, ElagoPotionRecords.TURTLE_MASTER_PLUSB));
     public static final Supplier<Item> SMALL_GOURD_OF_THE_TURTLE_MASTER_2 = ITEMS.register("small_gourd_of_the_turtle_master_2", () -> new ElagoDualPotionItem(new Item.Properties().stacksTo(1), 4, ElagoPotionRecords.TURTLE_MASTER_2A, ElagoPotionRecords.TURTLE_MASTER_2B));

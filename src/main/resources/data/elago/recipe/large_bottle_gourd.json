@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:dragon_head"
+    },
+    {
+      "item": "minecraft:echo_shard"
+    },
+    {
+      "item": "elago:medium_bottle_gourd"
+    }
+  ],
+  "result": {
+    "id": "elago:large_bottle_gourd",
+    "count": 1
+  }
+}
