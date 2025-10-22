@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "elago:large_bottle_gourd"
+    },
+    {
+      "item": "elago:breeze_rod"
+    }
+  ],
+  "result": {
+    "id": "elago:large_gourd_of_wind_charging",
+    "count": 1
+  }
+}
